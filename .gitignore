@@ -1,0 +1,13 @@
+# OS Noise
+Thumbs.db
+thumbs.db
+Desktop.ini
+.DS_Store
+.dist
+
+# IDEs and Editors
+.vscode/
+.idea/
+
+# System Files
+.env
