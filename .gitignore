@@ -4,6 +4,7 @@ thumbs.db
 Desktop.ini
 .DS_Store
 .dist
+*.baixados
 
 # IDEs and Editors
 .vscode/
