@@ -1,0 +1,1685 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do Zero ao Agêntico: O Poder da Curiosidade Humana</title>
+    <style>
+        /* ==================== MODERN DESIGN SYSTEM ==================== */
+        :root {
+            /* Professional Color Palette */
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --primary-light: #3b82f6;
+            --accent: #06b6d4;
+            --accent-secondary: #8b5cf6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+
+            /* Dark Theme Colors */
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border: #475569;
+
+            /* Typography */
+            --font-heading: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            --font-body: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+
+            /* Effects */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
+            --glow: 0 0 20px rgba(37, 99, 235, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #1a1a2e 100%);
+            color: var(--text-primary);
+            line-height: 1.8;
+            font-size: 18px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-lg);
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            text-align: center;
+            padding: var(--spacing-2xl) 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(37, 99, 235, 0.1) 100%);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 50%, var(--accent-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-md);
+            text-shadow: var(--glow);
+        }
+
+        .hero h2 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* ==================== SECTIONS ==================== */
+        section {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--accent-secondary));
+        }
+
+        h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--primary-light);
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        h3::before {
+            content: '';
+            width: 4px;
+            height: 2rem;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+            color: var(--text-secondary);
+        }
+
+        /* ==================== INFOGRAPHICS ==================== */
+        .infographic {
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            border: 1px solid var(--border);
+        }
+
+        .infographic-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Hardware Evolution Timeline */
+        .hardware-timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+            flex-wrap: wrap;
+        }
+
+        .hardware-stage {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hardware-card {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            border-radius: 12px;
+            padding: var(--spacing-md);
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hardware-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .hardware-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hardware-year {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .hardware-specs {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .hardware-specs strong {
+            color: var(--text-secondary);
+        }
+
+        /* Project Cards Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .project-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .project-date {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Skills Chart */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .skill-category {
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            border: 1px solid var(--border);
+        }
+
+        .skill-category-title {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .skill-bar {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .skill-progress {
+            height: 8px;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 4px;
+            transition: width 1s ease-out;
+        }
+
+        /* Architecture Diagram */
+        .architecture-diagram {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .arch-layer {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .arch-icon {
+            font-size: 2rem;
+            width: 60px;
+            text-align: center;
+        }
+
+        .arch-content {
+            flex: 1;
+        }
+
+        .arch-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .arch-description {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .arch-arrow {
+            text-align: center;
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        /* DTTTMTIF Methodology */
+        .dtttmtif-diagram {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin: var(--spacing-lg) 0;
+            flex-wrap: wrap;
+        }
+
+        .dtttmtif-step {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            padding: var(--spacing-md);
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            position: relative;
+        }
+
+        .dtttmtif-step.active {
+            border-color: var(--primary);
+            box-shadow: var(--glow);
+        }
+
+        .dtttmtif-number {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .dtttmtif-label {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .dtttmtif-arrow {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .stat-card {
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* ==================== IMAGES ==================== */
+        img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin: var(--spacing-md) 0;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+        }
+
+        .image-caption {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: -var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* ==================== BLOCKQUOTES ==================== */
+        blockquote {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            border-left: 4px solid var(--primary);
+            margin: var(--spacing-lg) 0;
+            padding: var(--spacing-lg);
+            border-radius: 0 12px 12px 0;
+            position: relative;
+        }
+
+        blockquote::before {
+            content: '"';
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            color: var(--primary);
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            opacity: 0.3;
+        }
+
+        blockquote p {
+            color: var(--text-primary);
+            font-style: italic;
+            margin-bottom: 0;
+        }
+
+        /* ==================== TABLES ==================== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-lg) 0;
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        th, td {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            font-weight: 600;
+            font-family: var(--font-heading);
+        }
+
+        tr:hover {
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        /* ==================== LISTS ==================== */
+        ul, ol {
+            margin: var(--spacing-md) 0;
+            padding-left: var(--spacing-lg);
+        }
+
+        li {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-secondary);
+        }
+
+        li::marker {
+            color: var(--accent);
+        }
+
+        /* ==================== CODE BLOCKS ==================== */
+        code {
+            background: var(--bg-tertiary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.9em;
+            color: var(--accent);
+        }
+
+        pre {
+            background: var(--bg-tertiary);
+            padding: var(--spacing-lg);
+            border-radius: 12px;
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            margin: var(--spacing-lg) 0;
+        }
+
+        pre code {
+            background: transparent;
+            padding: 0;
+            color: var(--text-primary);
+        }
+
+        /* ==================== ADMONITIONS ==================== */
+        .admonition {
+            margin: var(--spacing-lg) 0;
+            padding: var(--spacing-lg);
+            border-left: 4px solid var(--primary);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .admonition-title {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .admonition.note { border-color: var(--primary); }
+        .admonition.warning { border-color: var(--warning); }
+        .admonition.danger { border-color: var(--danger); }
+        .admonition.info { border-color: var(--accent); }
+
+        /* ==================== VIDEO SECTION ==================== */
+        #video-presentation {
+            margin-top: var(--spacing-2xl);
+            padding: var(--spacing-xl);
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+        }
+
+        #video-presentation h2 {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            color: var(--text-primary);
+            font-family: var(--font-heading);
+            font-size: 2rem;
+        }
+
+        #video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            background: #000;
+        }
+
+        #hevc-video {
+            display: block;
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        #hevc-fallback {
+            display: none;
+            margin-top: var(--spacing-md);
+            padding: var(--spacing-lg);
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid var(--warning);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        #hevc-fallback a {
+            color: var(--primary-light);
+            font-weight: bold;
+        }
+
+        #hevc-status {
+            margin-top: var(--spacing-sm);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .video-loading-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            font-size: 1.2rem;
+            border-radius: 12px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .video-loading-overlay .spinner {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: video-spin 0.8s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes video-spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ==================== RESPONSIVE DESIGN ==================== */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.4rem;
+            }
+
+            .container {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: var(--spacing-lg);
+            }
+
+            .hardware-timeline {
+                flex-direction: column;
+            }
+
+            .dtttmtif-diagram {
+                flex-direction: column;
+            }
+
+            .dtttmtif-arrow {
+                transform: rotate(90deg);
+            }
+
+            .closing h2 {
+                font-size: 1.8rem;
+            }
+
+            .closing .emphasis {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* ==================== CLOSING SECTION ==================== */
+        .closing {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(37, 99, 235, 0.15) 50%, var(--bg-secondary) 100%);
+            border-radius: 16px;
+            padding: var(--spacing-2xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .closing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--accent-secondary), var(--primary));
+        }
+
+        .closing h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 50%, var(--accent-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .closing p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto var(--spacing-md);
+        }
+
+        .closing strong {
+            color: var(--text-primary);
+        }
+
+        .closing .emphasis {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: var(--spacing-lg) 0;
+            padding: var(--spacing-md);
+            border-left: 4px solid var(--accent);
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .closing .meta-note {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid var(--border);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ==================== ANIMATIONS ==================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* ==================== PRINT STYLES ==================== */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            section {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>🎤 Do Zero ao Agêntico: O Poder da Curiosidade Humana</h1>
+            <h2>Como transformar o "será que dá?" em sistemas de produção robustos</h2>
+        </div>
+
+        <!-- Section 1: Prologo -->
+        <section>
+            <h3>1. Prólogo: O Primeiro Contato</h3>
+            <p>Diferente do que muitos pensam, minha jornada na IA não começou com um curso ou livro. Sou da era pré-quantização, quando 6 gigas de VRAM só dava pra rodar um modelo de 2.7B. Meu primeiro contato foi rodando o modelo OPT 2.7B no KoboldAI em uma GTX 1660 com só 412 de contexto. E ali, achei algo mágico, mas ainda era um sonho distante.</p>
+            <p>Anos depois tivemos a corrida das IAs open-source após o ChatGPT lançar, lembro de rodar o Llama 2 7B com 3k de contexto na mesma GTX 1660 quando saiu o suporte a quantização 4bits, mais tarde 4k de contexto quando saiu o GGUF que permitia desafogar um pouco no modelo na RAM, conseguindo no meu auge rodar um modelo Solar 10.7B 5bits GGUF com 3k de contexto na 1660.</p>
+            <p>Hoje tenho uma RTX 3070ti, e meu auge foi rodar o modelo Qwen 3 VL 30B-A3B 4bits (usava 6GB de VRAM e 27GB de RAM, rodando com velocidade de modelo 9B com inteligência de 14B) com 10k de contexto, e ainda ter 1.5GB de VRAM sobrando pra carregar imagens.</p>
+
+            <!-- Hardware Evolution Infographic -->
+            <div class="infographic">
+                <div class="infographic-title">🚀 Evolução de Hardware & Contexto</div>
+                <div class="hardware-timeline">
+                    <div class="hardware-stage">
+                        <div class="hardware-card">
+                            <div class="hardware-icon">🎮</div>
+                            <div class="hardware-year">Era Inicial</div>
+                            <div class="hardware-specs">
+                                <strong>GPU:</strong> GTX 1660<br>
+                                <strong>VRAM:</strong> 6GB<br>
+                                <strong>Modelo:</strong> OPT 2.7B<br>
+                                <strong>Contexto:</strong> 412 tokens<br>
+                                <strong>Quantização:</strong> FP16<br>
+                                <strong>Meio:</strong> KoboldAI
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hardware-stage">
+                        <div class="hardware-card">
+                            <div class="hardware-icon">⚡</div>
+                            <div class="hardware-year">Pós-ChatGPT</div>
+                            <div class="hardware-specs">
+                                <strong>GPU:</strong> GTX 1660<br>
+                                <strong>VRAM:</strong> 6GB<br>
+                                <strong>Modelo:</strong> Llama 2 7B<br>
+                                <strong>Contexto:</strong> 4k tokens<br>
+                                <strong>Quantização:</strong> 4-bit GGUF (Q4_K_M)<br>
+                                <strong>Meio:</strong> oobabooga/textgen
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hardware-stage">
+                        <div class="hardware-card">
+                            <div class="hardware-icon">🔥</div>
+                            <div class="hardware-year">Auge Atual</div>
+                            <div class="hardware-specs">
+                                <strong>GPU:</strong> RTX 3070ti<br>
+                                <strong>VRAM:</strong> 8GB<br>
+                                <strong>Modelo:</strong> Qwen-3-VL-30B-A3B<br>
+                                <strong>Contexto:</strong> 10k tokens<br>
+                                <strong>Quantização:</strong> 4-bit (Q4_K_XL)<br>
+                                <strong>Meio:</strong> koboldcpp
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <img src="./rendered_markdown_files/Captura de tela 2026-06-12 173648.jpg" alt="KoboldCPP - O segredo do A3B: carregar só os 3B ativos na VRAM">
+            <p class="image-caption">O segredo do Qwen 3 VL 30B-A3B: comando regex no KoboldCPP que carrega na VRAM só os tensors ativos. Como o A3B só possui 3B ativos, ocupa menos de 6GB de VRAM mesmo sendo um modelo 30B, permitindo rodar com velocidade de modelo 9B e inteligência de 14B.</p>
+        </section>
+
+        <!-- Section 2: A Faísca -->
+        <section>
+            <h3>2. A Faísca: O Primeiro "Será Que Dá?"</h3>
+            <img src="./rendered_markdown_files/xt6f2m.JPG" alt="Usando Meu APP pra escrever essa Palestra">
+            <p class="image-caption">AI-Writing-Notebook-UI em ação - escrevendo esta apresentação</p>
+
+            <!-- ADIÇÃO: Origem "hello world" da IA — o zero do "Do Zero ao Agêntico" -->
+            <p>A origem de tudo foi a pergunta mais simples possível: <strong>"Será que é tão difícil mexer com uma API de IA?"</strong> Eu só queria ver se conseguia pingar os endpoints da Infermatic e printar a resposta no terminal. Era literalmente o hello world da IA — um script Python, uma requisição, um JSON na tela. Mas quando a resposta apareceu, veio junto aquele pensamento: <em>"se eu já consigo fazer a IA responder no terminal, será que consigo por isso numa GUI? Será que dá pra digitar qualquer coisa e fazer a IA continuar de onde eu parei?"</em></p>
+            <!-- FIM ADIÇÃO -->
+
+            <p><strong>Setembro 2024:</strong> Poucos meses antes de me formar, criei meu primeiro aplicativo integrado a IA: um Notepad que continua de onde você parou. <strong>Tão louco de útil que estou usando o mesmo pra escrever esses slides.</strong></p>
+            <p>Até hoje este é o meu app que mais me vejo voltando a usar, é uma caixa de areia, o limite está apenas em sua imaginação. Quer ver um exemplo? Eu estou apresentando ele nesse momento.</p>
+
+            <!-- ADIÇÃO: Conecta o "será que dá" do terminal ao protótipo de GUI -->
+            <p>De <code>print(response)</code> no terminal pra protótipo de GUI completa em menos de 2 dias. O "será que dá?" mais simples que eu fiz na vida foi o que mais mudou tudo.</p>
+            <!-- FIM ADIÇÃO -->
+
+            <!-- ADIÇÃO: Languagetool — mostra DTTTMTIF antes do DTTTMTIF ter nome -->
+            <p>E já nos primeiros dias aprendi que fazer funcionar é só o começo: adicionei um corretor gramatical embutido (LanguageTool) já que todos os concorrentes web tinham um. O problema é que a maneira como ele contava caracteres pra inserir correções entrava em conflito com o texto sendo gerado em tempo real. Tive vários problemas com isso, acabei por mitigar — o bug ainda existe hoje, mas de forma muito mais rara e totalmente evitável depois que você pega as manhas do app. <strong>DTTTMTIF antes do DTTTMTIF ter nome.</strong></p>
+            <!-- FIM ADIÇÃO -->
+
+            <!-- AI-Writing-Notebook-UI Project Card -->
+            <div class="infographic">
+                <div class="infographic-title">📝 AI-Writing-Notebook-UI</div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">✨</div>
+                        <div class="project-title">Características Principais</div>
+                        <div class="project-description">
+                            • Geração de texto em tempo real<br>
+                            • Sessões salvas automaticamente<br>
+                            • Corretor gramatical embutido<br>
+                            • Suporte a Markdown completo<br>
+                            • Fórmulas matemáticas avançadas<br>
+                            • Text-to-Speech dinâmico
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">🔧</div>
+                        <div class="project-title">Stack Tecnológica</div>
+                        <div class="project-description">
+                            • Python + Tkinter (GUI)<br>
+                            • APIs OAI-compatible<br>
+                            • Pygame (TTS)<br>
+                            • Regex & SSE<br>
+                            • Configuração JSON<br>
+                            • Scripts automatizados
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">📈</div>
+                        <div class="project-title">Evolução</div>
+                        <div class="project-description">
+                            • Jul 2024: Commit inicial<br>
+                            • Jul 2024: Corretor gramatical<br>
+                            • Ago 2024: Scripts de instalação<br>
+                            • Set 2024: Markdown renderer<br>
+                            <!-- ADIÇÃO: Detecção automática /v1 -->
+                            • Mar 2025: Detecção automática de <code>/v1</code> na URL da API<br>
+                            <!-- FIM ADIÇÃO -->
+                            • Nov 2024: Fórmulas matemáticas<br>
+                            • Fev 2025: Modelos ordenados<br>
+                            <!-- ADIÇÃO: TTS com fallback entre APIs -->
+                            • Jul 2025: TTS dinâmico com fallback automático (NovelAI ↔ Infermatic)
+                            <!-- FIM ADIÇÃO -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Modularização -->
+        <section>
+            <h3>3. Modularizando até onde não der mais - O que seguiu a diante do AI-Writing-Notebook-UI</h3>
+            <p>Cada módulo do AI-Writing-Notebook-UI se tornou a base para todos os projetos seguintes, ou pelo menos a maior parte deles.</p>
+
+            <blockquote>
+                <p><strong>markdown_viewer.py</strong> - Tornou-se a ser reutilizado em todos projetos onde tinha que converter o output da IA em PDF</p>
+                <p><strong>start.bat e install.bat</strong> - Tornaram-se a base de todos os meus apps desktop, recebendo algumas melhorias em projetos mais recentes, como um sistema de evitar o fechamento do CMD em casos de crash facilitando a cópia da mensagem de erro pelo cliente pra suporte.</p>
+            </blockquote>
+
+            <p>Nessa época a geração de IA ainda ficava dentro do main, no meu projeto seguinte movi ela pra o seu próprio módulo, na época chamado <code>AI_Generator.py</code>.</p>
+
+            <!-- ADIÇÃO: Detecção automática /v1 como exemplo de aprendizado pragmático -->
+            <p>E tem um detalhe que parece bobo mas mostra como a prática ensina mais que a documentação: descobri que algumas APIs têm <code>/v1</code> na URL e outras não. Em vez de pedir pro usuário configurar isso manualmente, fiz o app tentar automaticamente com e sem <code>/v1</code> — tentativa e erro silencioso pro usuário, funciona sempre. <strong>O mesmo pragmatismo que mais tarde virou fallback automático de modelos no Secu-Agent.</strong></p>
+            <!-- FIM ADIÇÃO -->
+
+            <!-- Modular Architecture Diagram -->
+            <div class="infographic">
+                <div class="infographic-title">🏗️ Arquitetura Modular Reutilizável</div>
+                <div class="architecture-diagram">
+                    <div class="arch-layer">
+                        <div class="arch-icon">📄</div>
+                        <div class="arch-content">
+                            <div class="arch-title">markdown_viewer.py</div>
+                            <div class="arch-description">Conversão de output IA → PDF/HTML com suporte a Markdown, tabelas e fórmulas matemáticas</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <div class="arch-icon">🚀</div>
+                        <div class="arch-content">
+                            <div class="arch-title">start.bat / install.bat</div>
+                            <div class="arch-description">Scripts automatizados de instalação e execução com tratamento de erros</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <div class="arch-icon">🤖</div>
+                        <div class="arch-content">
+                            <div class="arch-title">AI_Generator.py</div>
+                            <div class="arch-description">Módulo dedicado de geração de IA com suporte a múltiplos modelos e APIs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: AI Tube Chan -->
+        <section>
+            <h3>4. O Segundo "Será Que Dá?" - AI Tube Chan</h3>
+            <img src="./rendered_markdown_files/186p6q.jpg" alt="Screenshot do AI Tube Chan">
+            <p class="image-caption">AI Tube Chan Interface</p>
+
+            <p><strong>Junho 2025:</strong> Enquanto trabalhava na WIT Mídias, criei um módulo que permitia converter qualquer link do YouTube enviado no chat em uma transcrição completa do vídeo com instruções pra IA responder qualquer pergunta sua levando em conta o contexto completo do vídeo.</p>
+            <p>Nessa eu tinha criado baterias de testes pra cada componente do sistema, e um sistema de gerenciamento de memória inteligente que descartava mensagens antigas ou transcripts antigos.</p>
+            <p>No término do contrato, pedi permissão de transformar esses módulos em um projeto open-source, e assim surgiu o AI Tube Chan.</p>
+            <p><strong>O grande diferencial:</strong> Capaz de lidar com vídeos de até 1 hora em menos de 32k tokens de contexto, superando soluções existentes em custo e eficiência.</p>
+
+            <!-- AI Tube Chan Project Cards -->
+            <div class="infographic">
+                <div class="infographic-title">🎬 AI Tube Chan - YouTube + IA</div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">🎥</div>
+                        <div class="project-title">Integração YouTube</div>
+                        <div class="project-description">
+                            • Transcrição automática<br>
+                            • Extração de metadados<br>
+                            • Compressão inteligente<br>
+                            • Contexto completo<br>
+                            • Discussão em tempo real
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">👥</div>
+                        <div class="project-title">Character Chatting</div>
+                        <div class="project-description">
+                            • Personagens de anime/manga<br>
+                            • Criador de personagens<br>
+                            • 3 modos de criatividade<br>
+                            • Personalidades únicas<br>
+                            • Interface dark moderna
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">🧪</div>
+                        <div class="project-title">Testes & Qualidade</div>
+                        <div class="project-description">
+                            • Primeiro projeto TTD<br>
+                            • Baterias de testes<br>
+                            • Gerenciamento de memória<br>
+                            • Suporte Gemini API<br>
+                            • OAI-compatible
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Retro Consoles -->
+        <section>
+            <h3>5. O Terceiro "Será Que Dá?" - AI for Your Dusty Consoles</h3>
+            <p><strong>Agosto 2025:</strong> Depois de ficar indignado com o fato de que nenhuma interface de IA funcionava no navegador de um iPad Air de 2013, resolvi levar isso ao extremo.</p>
+            <p>Esse projeto nasceu de uma mistura de paixão e ódio. Fiquei indignado ao descobrir que nenhuma interface de IA funcionava no navegador de um iPad Air de 2013 — Librechat, ChatGPT, tudo dava tela branca. Mas essa frustração despertou uma curiosidade: será que é tão difícil fazer um site que funcione em aparelhos antigos? Por que os devs quebram o suporte a navegadores tão rápido? Não poderiam ter uma versão alternativa?</p>
+            <p>Criei uma interface que roda em um <strong>PSP (2005)</strong> e um <strong>DSi (2008)</strong>. O PSP não tem JS, então fiz tudo via formulários HTTP GET. O DSi tem CSS3 básico e descobri que o navegador usa a tela de baixo como lupa de zoom, e passa a usar a segunda tela como continuação da primeira se a largura da página couber inteira na tela do DSi na horizontal (exatamente 412 pixels).</p>
+            <img src="./rendered_markdown_files/cd2b139a-520d-4a37-8b79-aa50fe45dbe2" width="412" alt="PSP and DSI side by side">
+            <p class="image-caption">PSP (2005) e DSi (2008) rodando IA</p>
+
+            <h4>O Readme do projeto é auto-explicativo pra não dizer sarcástico:</h4>
+            <p><strong>Step 1:</strong> Stop crying about your retro tech. This app lets your PSP and DSI <em>finally</em> join the AI revolution.</p>
+
+            <!-- Retro Console Comparison -->
+            <div class="infographic">
+                <div class="infographic-title">🎮 Desafio Técnico: Retro Consoles</div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">🕹️</div>
+                        <div class="project-title">PSP (2005)</div>
+                        <div class="project-description">
+                            • <strong>Browser:</strong> Sem JavaScript<br>
+                            • <strong>Solução:</strong> HTTP GET forms<br>
+                            • <strong>URL:</strong> http://IP:5000<br>
+                            • <strong>Limitação:</strong> Básico
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">📱</div>
+                        <div class="project-title">DSi (2008)</div>
+                        <div class="project-description">
+                            • <strong>Browser:</strong> CSS3 básico<br>
+                            • <strong>Solução:</strong> Dual screens<br>
+                            • <strong>URL:</strong> IP:5000<br>
+                            • <strong>Feature:</strong> 412px trigger (tela contínua)
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">⚙️</div>
+                        <div class="project-title">Arquitetura</div>
+                        <div class="project-description">
+                            • <strong>Backend:</strong> Python Flask<br>
+                            • <strong>Detecção:</strong> User Agent<br>
+                            • <strong>HTML:</strong> Separado por console<br>
+                            • <strong>Deploy:</strong> Local server
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h4>What It Does</h4>
+            <ul>
+                <li><strong>PSP (PlayStation Portable):</strong> Squeezes ChatGPT into that 2005 browser. <em>Note:</em> You <em>must</em> include <code>http://</code> in the URL (e.g., <code>http://192.168.1.100:5000</code>). No exceptions.</li>
+                <li><strong>DSi (Nintendo DSi):</strong> Uses both screens for improved vertical scrolling, think like a book, scroll down and texts pops at the top, oh and its more modern, like just your pc IP:Port already works, aka: <code>192.168.1.100:5000</code></li>
+            </ul>
+
+            <h4>Why This Rules</h4>
+            <ul>
+                <li><strong>Zero JavaScript for PSP:</strong> Their browser can't handle modern shit.</li>
+                <li><strong>DSi's Dual Screens:</strong> We <em>finally</em> use that top screen for something other than knowing where we are.</li>
+                <li><strong>Cross-Platform:</strong> Same server serves both PSP and DSI. Lazy devs rejoice.</li>
+            </ul>
+
+            <h4>Setup for Noobs</h4>
+            <ol>
+                <li><strong>Install Python 3.8+</strong> (You Probably already have it).</li>
+                <li>Clone this repo.</li>
+                <li>Rename and edit <code>config.json.example</code> with your API key from <strong><a href="https://ui.infermatic.ai/">Infermatic.ai</a></strong> (or whatever overpriced service you're using).</li>
+                <li><strong>(Optional)</strong> Make sure to edit <code>server.py</code> with a valid AI model name if you are not using Infermatic.</li>
+                <li>Run <code>start.bat</code> to just let the app install/start itself. Magic!</li>
+            </ol>
+
+            <h4>Running the Server</h4>
+            <ul>
+                <li><strong>PSP:</strong> Enter <code>http://[Your-IP]:5000</code> in the XMB browser.</li>
+                <li><strong>DSi:</strong> Type <code>[Your-IP]:5000</code> in the DSi Browser. No <code>http://</code> needed here.</li>
+            </ul>
+
+            <h4>Troubleshooting</h4>
+            <ul>
+                <li><strong>PSP Can't Show Content</strong> Have you included <code>http://</code> in the URL?</li>
+                <li><strong>DSi Freezes?</strong> Close and reopen. It's 2008 again.</li>
+                <li><strong>No Responses?</strong> Your API key is wrong. Duh.</li>
+            </ul>
+
+            <h4>Customization</h4>
+            <ul>
+                <li><strong>Change Models:</strong> Edit <code>server.py</code> and replace <code>TheDrummer-Valkyrie-49B-v1</code> with whatever your API uses.</li>
+                <li><strong>Bigger Responses:</strong> For DSI users, increase the <code>max_tokens</code> in <code>server.py</code> to get more text, for example: <code>max_tokens = 1024</code>, for PSP users I recommend buying a DSI instead.</li>
+            </ul>
+
+            <h4>Contributing</h4>
+            <p>If you're some retro gaming nerd who wants to optimize this to work on even more retro consoles (Wii, Wii U, etc.), fork away. Just send the pull request once you tested on real hardware, make sure all changes are based on user agent detection and each console must have their own HTML file.</p>
+
+            <h4>License</h4>
+            <p>MIT License. Do what you want with it, I may update this, or may not.</p>
+
+            <h4>Legal BS</h4>
+            <p>This project is for educational purposes only. No consoles were harmed to make this possible. Also, don't be evil, but if you do, I won't stop you.</p>
+
+            <h4>Credits</h4>
+            <ul>
+                <li><a href="https://ui.infermatic.ai/">Infermatic.ai</a> for providing the API</li>
+                <li>The internet for being awesome</li>
+                <li>Myself for making this happen</li>
+                <li>You for reading this far</li>
+            </ul>
+        </section>
+
+        <!-- Section 6: Secu-Agent -->
+        <section>
+            <h3>6. O "Será Que Dá?" mais recente - Secu-Agent: Quando a IA vira Produto em Produção</h3>
+            <p><strong>Maio-Junho 2026:</strong> Aqui a história muda de figura. Não é mais sobre "funcionar", é sobre estar preparado pro pior e garantir aquele uptime nas alturas.</p>
+            <p>Usei o próprio AI-Writing-Notebook-UI para co-escrever o brainstorm do plano de projeto. Antes disso, converti um PDF de requisitos para MD usando VLMs, e então colei o conteúdo no meu notebook, escrevi o início do brainstorm:</p>
+
+            <blockquote>
+                <h4>O meu Brainstorm:</h4>
+                <p>Okay, o problema pede um agente de IA que gere leads, reduza no-shows e agende reuniões.</p>
+                <p>O problema principal é...</p>
+            </blockquote>
+
+            <p>E então mandei gerar, fui co-escrevendo o brainstorm com a IA, até finalmente entender o problema completamente e chegar a um plano rascunho com a stack que até então parecia ideal.</p>
+            <p>Mas aqui eu aprendi a lição mais importante de todas: <strong>em produção, a sorte não é uma estratégia.</strong></p>
+            <p>Diferente dos meus projetos anteriores, onde eu podia apenas "testar e ver se funcionava", o Secu-Agent exigia estabilidade. Eu não podia deixar um lead de um C-Level de cibersegurança receber um erro 500 porque a IA decidiu inventar um formato de JSON novo.</p>
+            <p>Foi aqui que eu implementei o que eu chamo de...</p>
+
+            <blockquote>
+                <h1 style="text-align: center; font-size: 2.5rem; margin: var(--spacing-lg) 0;">DTTTMTIF</h1>
+            </blockquote>
+
+            <!-- DTTTMTIF Methodology -->
+            <div class="infographic">
+                <div class="infographic-title">🔄 Metodologia DTTTMTIF</div>
+                <div class="dtttmtif-diagram">
+                    <div class="dtttmtif-step active">
+                        <div class="dtttmtif-number">1</div>
+                        <div class="dtttmtif-label">Development</div>
+                    </div>
+                    <div class="dtttmtif-arrow">→</div>
+                    <div class="dtttmtif-step active">
+                        <div class="dtttmtif-number">2</div>
+                        <div class="dtttmtif-label">Tests</div>
+                    </div>
+                    <div class="dtttmtif-arrow">→</div>
+                    <div class="dtttmtif-step active">
+                        <div class="dtttmtif-number">3</div>
+                        <div class="dtttmtif-label">Tests</div>
+                    </div>
+                    <div class="dtttmtif-arrow">→</div>
+                    <div class="dtttmtif-step active">
+                        <div class="dtttmtif-number">4</div>
+                        <div class="dtttmtif-label">More Tests</div>
+                    </div>
+                    <div class="dtttmtif-arrow">→</div>
+                    <div class="dtttmtif-step">
+                        <div class="dtttmtif-number">?</div>
+                        <div class="dtttmtif-label">If it Fails</div>
+                    </div>
+                </div>
+                <p style="text-align: center; color: var(--text-muted); font-style: italic;">
+                    Development then Tests then Tests then More Tests if it Fails
+                </p>
+            </div>
+
+            <p>Para quem não conhece a sigla, ela significa: <strong>Development then Tests then Tests then More Tests if it Fails</strong> (Desenvolvimento, depois Testes, depois Testes, depois Mais Testes se Falharem).</p>
+            <p>Basicamente, eu aceitei que a IA é um gênio instável. Então, em vez de confiar nela, eu a transformei no meu próprio testador. A regra era simples: <strong>Nada era commitado sem que a IA gerasse um teste, e esse teste provasse a mim (o humano) que não houve regressão.</strong></p>
+            <p>Se eu mexia em uma linha de código no módulo de leads e isso quebrava a mensagem de boas-vindas, o sistema de testes gritava. Eu corrigia, rodava tudo de novo, e repetia o ciclo até que o código estivesse blindado. No final, eu tinha mais de 90 testes cobrindo desde a captura do lead até o deploy na nuvem.</p>
+
+            <!-- Secu-Agent Stats -->
+            <div class="infographic">
+                <div class="infographic-title">📊 Secu-Agent - Métricas de Produção</div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">90+</div>
+                        <div class="stat-label">Testes Automatizados</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">13</div>
+                        <div class="stat-label">Regras de Engajamento</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Uptime Garantido</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Crashes em Produção</div>
+                    </div>
+                </div>
+            </div>
+
+            <p><strong>O resultado?</strong> Um sistema com fallback automático entre modelos (Gemma → Mistral → GPT-4o-mini), logs estruturados, retry com backoff exponencial, e zero - repito, <strong>zero</strong> - crashes em produção durante todo o período de operação.</p>
+
+            <!-- ADIÇÃO: Conexão explícita TTS fallback → Secu-Agent fallback -->
+            <p>E se você prestar atenção, esse padrão de fallback já existia antes do Secu-Agent. O TTS do AI-Writing-Notebook-UI já fazia fallback automático entre a API da NovelAI e a da Infermatic quando uma falhava. A semente do "nunca confie num único ponto de falha" foi plantada lá atrás — no Secu-Agent ela só cresceu e ganhou nome.</p>
+            <!-- FIM ADIÇÃO -->
+
+            <p>Desenvolvedores estão acostumados com o 99% uptime de provedores grandes como Gemini, OpenAI, etc. Eles esquecem do valor de um bom fallback. Enquanto muitos se acostumam com tudo estar sempre em pé, eu crio meus sistemas pra tolerar o apocalipse. A mesma mentalidade que me fez criar fallback de TTS no Notebook agora garante que o Secu-Agent nunca pare, mesmo quando o mundo parece querer que ele pare.</p>
+
+            <!-- Secu-Agent Architecture -->
+            <div class="infographic">
+                <div class="infographic-title">🏛️ Arquitetura Secu-Agent</div>
+                <div class="architecture-diagram">
+                    <div class="arch-layer">
+                        <div class="arch-icon">🎯</div>
+                        <div class="arch-content">
+                            <div class="arch-title">Landing Page & Captação</div>
+                            <div class="arch-description">Formulário de alta conversão com enriquecimento automático via Clearbit API</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <div class="arch-icon">🤖</div>
+                        <div class="arch-content">
+                            <div class="arch-title">IA Autônoma & Engajamento</div>
+                            <div class="arch-description">13 regras de negócio automatizadas com fallback entre modelos (Gemma → Mistral → GPT-4o-mini)</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <div class="arch-icon">📊</div>
+                        <div class="arch-content">
+                            <div class="arch-title">Dashboard Analítico</div>
+                            <div class="arch-description">Monitoramento em tempo real de leads, engajamento e métricas de conversão</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <div class="arch-icon">🚀</div>
+                        <div class="arch-content">
+                            <div class="arch-title">Deploy em Produção</div>
+                            <div class="arch-description">Railway Cloud com 99.9% uptime, logs estruturados e retry com backoff exponencial</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: ADHD Friendly Domain Driven Development -->
+        <section>
+            <h3>7. ADHD Friendly Domain Driven Development</h3>
+            <p>Um aprendizado que tenho reparado cada vez mais e virou parte chave do Secu-Agent foi a necessidade de forçar modelos de IA a manterem os projetos <strong>ADHD Friendly</strong>. Se não, eles já saem quebrando o projeto em uma mega arquitetura com uns 20+ arquivos pra algo que poderia ser separado em 2 a 5 domínios (arquivos).</p>
+            <p>Isso inclusive acontece e é mostrado no vídeo no final da apresentação: em um ponto a IA cria um documento MD de uma arquitetura à cara de overengineering pra o que era pra ser só um MVP elegante e minimalista de um app de mostrar logprobs de IA usando Tkinter. Tive que interromper a IA após ela gerar o documento e mandar ela redigir ele inteiro usando meu <strong>ADHD Friendly Domain Driven Development</strong>.</p>
+
+            <!-- ADHD Friendly DDD Infographic -->
+            <div class="infographic">
+                <div class="infographic-title">🧠 ADHD Friendly Domain Driven Development</div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">🎯</div>
+                        <div class="project-title">Princípio Central</div>
+                        <div class="project-description">
+                            • <strong>Minimalismo:</strong> 2-5 domínios máx<br>
+                            • <strong>Simplicidade:</strong> Arquivos coesos<br>
+                            • <strong>Foco:</strong> Um domínio = um propósito<br>
+                            • <strong>Evitar:</strong> Overengineering
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">⚠️</div>
+                        <div class="project-title">Problema Comum</div>
+                        <div class="project-description">
+                            • IA tende ao overengineering<br>
+                            • 20+ arquivos desnecessários<br>
+                            • Arquiteturas complexas<br>
+                            • Dificuldade de manutenção
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">✅</div>
+                        <div class="project-title">Solução ADHD Friendly</div>
+                        <div class="project-description">
+                            • Forçar limites de domínios<br>
+                            • Revisão arquitetural constante<br>
+                            • MVP elegante primeiro<br>
+                            • Evolução controlada
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <blockquote>
+                <p><strong>Exemplo Prático:</strong> App de logprobs com Tkinter - IA criou arquitetura complexa com 20+ arquivos, foi redigido para 2 domínios coesos: <strong>main.py</strong> (esqueleto do app + fluxo de uso/regras de negócio) e <strong>ai_module.py</strong> (lógica avançada de pingar API + lidar com outputs de logprobs), além de <strong>config.json</strong> (padrão em todos projetos) e testes do módulo de IA.</p>
+            </blockquote>
+        </section>
+
+        <!-- Section 8: Integrações de APIs -->
+        <section>
+            <h3>8. Integrações de APIs & Desafios Técnicos</h3>
+            <p>Ao longo dos projetos, integrei múltiplas APIs de IA, cada uma com seus particularidades e desafios.</p>
+
+            <!-- API Integrations Infographic -->
+            <div class="infographic">
+                <div class="infographic-title">🔌 Integrações de APIs</div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">🤖</div>
+                        <div class="project-title">Arli.AI & Infermatic.AI</div>
+                        <div class="project-description">
+                            • <strong>Padrão:</strong> OpenAI-compatible<br>
+                            • <strong>Backend:</strong> VLLM<br>
+                            • <strong>Extras:</strong> parâmetro min_p<br>
+                            • <strong>Status:</strong> ✅ Integração suave
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">🔥</div>
+                        <div class="project-title">Gemini API</div>
+                        <div class="project-description">
+                            • <strong>Padrão:</strong> OAI-compatible (quebrado)<br>
+                            • <strong>Problema:</strong> Prefixo em lista de modelos<br>
+                            • <strong>Solução:</strong> Regex dinâmico<br>
+                            • <strong>Status:</strong> ✅ Funcional após correções
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">🎬</div>
+                        <div class="project-title">YouTube API</div>
+                        <div class="project-description">
+                            • <strong>Uso:</strong> Transcrição de vídeos<br>
+                            • <strong>Desafio:</strong> Compressão inteligente<br>
+                            • <strong>Resultado:</strong> 1h em <32k tokens<br>
+                            • <strong>Status:</strong> ✅ Otimizado
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <blockquote>
+                <p><strong>War Story - Gemini API:</strong> A API do Gemini quebrava o padrão OpenAI em diversos lugares. Na lista de modelos, retornava um prefixo antes de cada nome, mas esperava o nome sem prefixo quando fosse usar o modelo. Tive que usar muito regex para corrigir e detectar isso tudo de forma dinâmica no AI Tube Chan.</p>
+            </blockquote>
+        </section>
+
+        <!-- Section 9: Métricas Pessoais & Impacto -->
+        <section>
+            <h3>9. Métricas Pessoais & Impacto</h3>
+            <p>Além dos projetos open-source, também trabalhei com clientes reais e desenvolvi soluções que fazem diferença no dia a dia.</p>
+
+            <!-- Personal Metrics -->
+            <div class="infographic">
+                <div class="infographic-title">📊 Métricas de Desenvolvimento</div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">~30h</div>
+                        <div class="stat-label">Média por projeto</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Clientes em 2026</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">APIs de IA integradas</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Projetos open-source</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Client Work -->
+            <div class="infographic">
+                <div class="infographic-title">💼 Trabalho com Clientes (2026)</div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">⚙️</div>
+                        <div class="project-title">Automação Clássica</div>
+                        <div class="project-description">
+                            • <strong>Tipo:</strong> Sem IA<br>
+                            • <strong>Cliente:</strong> Santa Maria<br>
+                            • <strong>Status:</strong> ✅ Concluído
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">🤖</div>
+                        <div class="project-title">Automação com IA #1</div>
+                        <div class="project-description">
+                            • <strong>Tipo:</strong> Com IA<br>
+                            • <strong>Cliente:</strong> Santa Maria<br>
+                            • <strong>Status:</strong> ✅ Concluído
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">🤖</div>
+                        <div class="project-title">Automação com IA #2</div>
+                        <div class="project-description">
+                            • <strong>Tipo:</strong> Com IA<br>
+                            • <strong>Cliente:</strong> Santa Maria<br>
+                            • <strong>Status:</strong> ✅ Concluído
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modules Extracted -->
+            <div class="infographic">
+                <div class="infographic-title">📦 Módulos Extraídos de Clientes</div>
+                <div class="architecture-diagram">
+                    <div class="arch-layer">
+                        <div class="arch-icon">🎬</div>
+                        <div class="arch-content">
+                            <div class="arch-title">YouTube + Memória</div>
+                            <div class="arch-description">Extraído da WIT Mídias → AI Tube Chan (transcrição e discussão de vídeos)</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <div class="arch-icon">📄</div>
+                        <div class="arch-content">
+                            <div class="arch-title">PDF → Markdown (VLM)</div>
+                            <div class="arch-description">Extraído de cliente grande → Uso interno (conversão de PDFs para LLMs)</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <div class="arch-icon">🚀</div>
+                        <div class="arch-content">
+                            <div class="arch-title">Futuro: Publicação GitHub</div>
+                            <div class="arch-description">Planejo publicar o conversor PDF→MD como projeto open-source</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <blockquote>
+                <p><strong>Nota:</strong> Semana passada mesmo refatorei em 2 horas o projeto do PSP/DSi para facilitar adição de suporte a "novos" consoles velhos pela comunidade. Talvez no futuro eu adicione eu mesmo uma versão otimizada para PS3 e PS Vita.</p>
+            </blockquote>
+        </section>
+
+        <!-- Section 10: Recomendações -->
+        <section>
+            <h3>10. Recomendações: Por Onde Começar?</h3>
+            <p>Se essa apresentação despertou sua curiosidade para começar a explorar IA de forma prática, aqui estão minhas recomendações baseadas em experiência real.</p>
+
+            <!-- Paid Recommendations -->
+            <div class="infographic">
+                <div class="infographic-title">💎 Recomendações Pagas</div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">🏆</div>
+                        <div class="project-title">Arli.AI <span style="color: var(--accent); font-size: 0.8rem;">(PROVEDOR RECOMENDADO)</span></div>
+                        <div class="project-description">
+                            • <strong>Plano:</strong> Advanced - $25/mês<br>
+                            • <strong>Contexto:</strong> 200k+ tokens<br>
+                            • <strong>Modelos:</strong> GLM 4.7, Mistral Medium 128b<br>
+                            • <strong>Tool:</strong> Roocode v3.36.14 (ou alternativa com XML tool calls)<br>
+                            • <a href="https://www.arliai.com/pricing" target="_blank" rel="noopener" style="color: var(--primary-light);">Ver preços →</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">💰</div>
+                        <div class="project-title">Infermatic.AI</div>
+                        <div class="project-description">
+                            • <strong>Plano:</strong> Standard - $15/mês<br>
+                            • <strong>Contexto:</strong> 66k tokens<br>
+                            • <strong>Modelo:</strong> Qwen 3.6 35B-A3B<br>
+                            • <strong>Tool:</strong> Roocode v3.36.14 (ou alternativa com XML tool calls)<br>
+                            • <a href="https://infermatic.ai/pricing/" target="_blank" rel="noopener" style="color: var(--primary-light);">Ver preços →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <blockquote>
+                <p><strong>Dica Importante:</strong> Para ambos os provedores pagos, recomendo usar o <strong>Roocode v3.36.14</strong> (forçando a versão mais antiga) ou buscar uma alternativa open-source que mantenha suporte a tool calls via XML. Nem todas as ferramentas suportam mais esse formato de tool call, mas ele é essencial para garantir o funcionamento com os modelos do Infermatic ou ArliAI.</p>
+            </blockquote>
+
+            <!-- Free Recommendations -->
+            <div class="infographic">
+                <div class="infographic-title">🆓 Recomendações Gratuitas</div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">💬</div>
+                        <div class="project-title">Zhai Chat</div>
+                        <div class="project-description">
+                            • <strong>Acesso:</strong> Gratuito<br>
+                            • <strong>Limitação:</strong> Modelos sem acesso a tools (Harness)<br>
+                            • <a href="https://chat.z.ai/auth" target="_blank" rel="noopener" style="color: var(--primary-light);">Acessar →</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">💬</div>
+                        <div class="project-title">Qwen Chat</div>
+                        <div class="project-description">
+                            • <strong>Acesso:</strong> Gratuito<br>
+                            • <strong>Limitação:</strong> Modelos sem acesso a tools (Harness)<br>
+                            • <a href="https://chat.qwen.ai/" target="_blank" rel="noopener" style="color: var(--primary-light);">Acessar →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <blockquote>
+                <p><strong>Aviso:</strong> Os modelos gratuitos são significativamente limitados quando não têm acesso às tools (chamado de <strong>Harness</strong> — explico na apresentação). O próprio ArliAI é prova disso: ele tem dois modelos GLM mais antigos em seu acervo, mas o fato de terem acesso ao Harness do Roocode os faz conseguir coisas que o GLM 5.1 do site do Zhai não consegue. A diferença de capacidade com e sem tools é brutal.</p>
+            </blockquote>
+        </section>
+
+        <!-- ADIÇÃO: Seção de fechamento que arremata o arco "O Poder da Curiosidade Humana" -->
+        <section class="closing">
+            <h2>🧠 O Poder da Curiosidade Humana</h2>
+            <p>Tudo começou com um <code>print(response)</code> num terminal. Um "será que dá?" que virou notepad, que virou transcritor de vídeo, que virou IA num PSP de 2005, que virou sistema de produção com zero crashes.</p>
+            <p>A IA é o gênio instável. A curiosidade humana é o que transforma <strong>"será que dá?"</strong> em <strong>"tá em produção."</strong></p>
+            <div class="emphasis">
+                A curiosidade testa. A disciplina mantém. As duas juntas constroem.
+            </div>
+            <p class="meta-note">
+                E esses slides? Co-escritos com a mesma IA que me ajudou a criar o Secu-Agent. O esboço foi escrito no AI-Writing-Notebook-UI, convertido pra HTML, e depois refinado no VSCode com agentes de IA que me fizeram perguntas engajantes sobre meus próprios projetos. Fui agêntico até pra fazer esta apresentação — do zero ao agêntico, literalmente.
+            </p>
+        </section>
+        <!-- FIM ADIÇÃO -->
+
+        <!-- Video Section -->
+        <div id="video-presentation">
+            <h2>🎬 Vídeo Exemplo do Meu Fluxo de Trabalho com RooCode (2H comprimidas em 8 minutos)</h2>
+
+            <div id="video-wrapper">
+                <div id="video-loading" class="video-loading-overlay">
+                    <span class="spinner"></span> Carregando vídeo...
+                </div>
+                <!--
+                    HEVC/H265 playback strategy:
+                    1. Native <video> with HEVC codec hint — works in Safari, Edge, Chrome 107+ (Windows with HW decoder)
+                    2. Fallback <source> without codec string — lets the browser try anyway
+                    3. JS detection below checks canPlayType and shows fallback UI if needed
+                    4. Download link provided for browsers that can't play it natively (Firefox, Chrome on macOS/Linux)
+                -->
+                <video id="hevc-video" controls playsinline preload="metadata"
+                       style="display:block; width:100%; border-radius:12px; background:#000;">
+                    <source src="https://files.catbox.moe/ti9j25.mp4" type="video/mp4; codecs=hev1">
+                    <source src="https://files.catbox.moe/ti9j25.mp4" type="video/mp4; codecs=hvc1">
+                    <source src="https://files.catbox.moe/ti9j25.mp4" type="video/mp4">
+                    Seu navegador não suporta a reprodução de vídeo HTML5.
+                </video>
+            </div>
+
+            <div id="hevc-fallback">
+                <p>⚠️ <strong>Seu navegador pode não suportar H265/HEVC nativamente.</strong></p>
+                <p>
+                    Navegadores com suporte nativo: <strong>Safari</strong> (macOS/iOS), <strong>Edge</strong> (Windows 10+), <strong>Chrome 107+</strong> (Windows com hardware HEVC).<br>
+                    Firefox e Chrome no macOS/Linux geralmente <strong>não</strong> suportam HEVC nativamente.
+                </p>
+                <p style="margin-top:0.8em;">
+                    <a href="https://files.catbox.moe/ti9j25.mp4" download target="_blank" rel="noopener"
+                       style="display:inline-block; padding:0.6em 1.2em; background:var(--primary); color:#fff; text-decoration:none; border-radius:8px; font-weight:bold;">
+                        ⬇️ Baixar o Vídeo
+                    </a>
+                    &nbsp;ou abra este arquivo no <a href="https://www.videolan.org/vlc/" target="_blank" rel="noopener">VLC Player</a>
+                </p>
+            </div>
+
+            <div id="hevc-status"></div>
+        </div>
+
+        <script>
+        (function() {
+            var video = document.getElementById('hevc-video');
+            var fallback = document.getElementById('hevc-fallback');
+            var status = document.getElementById('hevc-status');
+            var loading = document.getElementById('video-loading');
+
+            function checkHEVC() {
+                if (!video.canPlayType) return false;
+                // Try multiple HEVC codec strings that different browsers recognize
+                return video.canPlayType('video/mp4; codecs="hev1.1.6.L93.B0"') !== '' ||
+                       video.canPlayType('video/mp4; codecs="hvc1.1.6.L93.B0"') !== '' ||
+                       video.canPlayType('video/mp4; codecs="hev1"') !== '' ||
+                       video.canPlayType('video/mp4; codecs="hvc1"') !== '' ||
+                       video.canPlayType('video/mp4; codecs="hev1.2.4.L120.B0"') !== '' ||
+                       video.canPlayType('video/mp4; codecs="hvc1.2.4.L120.B0"') !== '';
+            }
+
+            var hevcSupported = checkHEVC();
+
+            if (hevcSupported) {
+                status.innerHTML = '✅ <strong>Reprodução HEVC nativa suportada</strong> — clique play para assistir';
+                status.style.color = '#10b981';
+            } else {
+                status.innerHTML = '⚠️ <strong>Reprodução HEVC nativa não detectada</strong> — o navegador ainda pode tentar reproduzir. Se não funcionar, use o botão de download abaixo.';
+                status.style.color = '#ef4444';
+                fallback.style.display = 'block';
+            }
+
+            // Hide loading overlay once video is ready
+            video.addEventListener('loadeddata', function() {
+                if (loading) loading.style.display = 'none';
+            });
+
+            video.addEventListener('canplay', function() {
+                if (loading) loading.style.display = 'none';
+            });
+
+            // If video fails to load, show fallback prominently
+            video.addEventListener('error', function() {
+                if (loading) loading.style.display = 'none';
+                fallback.style.display = 'block';
+                status.innerHTML = '❌ <strong>Não foi possível reproduzir o vídeo neste navegador.</strong> Por favor, baixe o arquivo e abra no VLC ou outro player local.';
+                status.style.color = '#ef4444';
+            });
+
+            // Also handle the case where video loads but can't decode (common HEVC scenario)
+            video.addEventListener('stalled', function() {
+                // Give it a few seconds before declaring problems
+                setTimeout(function() {
+                    if (video.readyState < 2) {
+                        if (loading) loading.style.display = 'none';
+                    }
+                }, 8000);
+            });
+
+            // Auto-hide loading after timeout (in case events don't fire for HEVC)
+            setTimeout(function() {
+                if (loading) loading.style.display = 'none';
+            }, 15000);
+        })();
+        </script>
+    </div>
+</body>
+</html>
